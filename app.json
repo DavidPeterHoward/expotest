@@ -1,0 +1,12 @@
+{
+  "name": "csensexpo",
+  "displayName": "csensexpo",
+  "expo": {
+    "name": "csensexpo",
+    "slug": "csensexpo",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
