@@ -1,15 +1,36 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Platform } from "react-native";
+import { StatusBar, Box, Center, NativeBaseProvider, Text } from "native-base";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+// import NativeBaseContextProvider from "./src/_themeProvider/";
+import ApplicationEntry from "./src/ApplicationEntry";
 import Realm from "realm";
+
+export function StatusBarContainer(props: any) {
+  const height = Platform.OS === "ios" ? 20 : -5;
+  const { backgroundColor } = props;
+
+  return (
+    <Box style={{ height, backgroundColor }}>
+      <StatusBar {...props} />
+    </Box>
+  );
+}
 
 const app = new Realm.App({ id: "application-0-onlxj" });
 
 export default function App() {
   console.log(app);
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
+    <NativeBaseProvider>
+      <SafeAreaProvider>
+        <StatusBarContainer
+          backgroundColor="#8c8a92"
+          barStyle="light-content"
+        />
+        <ApplicationEntry />
+      </SafeAreaProvider>
+    </NativeBaseProvider>
   );
 }
 
