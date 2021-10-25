@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Platform } from "react-native";
 import { StatusBar, Box, Center, NativeBaseProvider, Text } from "native-base";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-// import NativeBaseContextProvider from "./src/_themeProvider/";
+import NativeBaseContextProvider from "./src/_themeProvider/";
 import ApplicationEntry from "./src/ApplicationEntry";
 import Realm from "realm";
 
@@ -22,7 +22,7 @@ const app = new Realm.App({ id: "application-0-onlxj" });
 export default function App() {
   console.log(app);
   return (
-    <NativeBaseProvider>
+    <NativeBaseContextProvider>
       <SafeAreaProvider>
         <StatusBarContainer
           backgroundColor="#8c8a92"
@@ -30,7 +30,7 @@ export default function App() {
         />
         <ApplicationEntry />
       </SafeAreaProvider>
-    </NativeBaseProvider>
+    </NativeBaseContextProvider>
   );
 }
 

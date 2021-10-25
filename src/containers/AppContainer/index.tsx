@@ -22,17 +22,12 @@ import {
   TextArea,
   Text,
 } from "native-base";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
-import { NavigationContainer } from "@react-navigation/native";
-import NavigationNavigator from "./navigation";
-
-interface Props {}
-
-export default function ApplicationEntry({}: Props): ReactElement {
+export default function AppContainer({ children }: any): ReactElement {
   return (
-    <NavigationContainer>
-      {/* <NavigationNavigator /> */}
-      <Text>Hello!</Text>
-    </NavigationContainer>
+    <Box p={5} m={5}>
+      {children}
+    </Box>
   );
 }
