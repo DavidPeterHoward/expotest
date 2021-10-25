@@ -31,8 +31,7 @@ interface Props {}
 export default function ApplicationEntry({}: Props): ReactElement {
   return (
     <NavigationContainer>
-      {/* <NavigationNavigator /> */}
-      <Text>Hello!</Text>
+      <NavigationNavigator />
     </NavigationContainer>
   );
 }
